@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Awais Tahir — Finance Professional & Data Analyst</title>
+  <meta name="description" content="Comprehensive finance and data services: bookkeeping, IFRS reporting, Power BI dashboards, Python automation, SQL analytics and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── SERVICES HERO ── */
+    .svc-hero { padding: 150px 0 80px; background: var(--white); position: relative; overflow: hidden; text-align: center; }
+    .svc-hero::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 30% 60%, rgba(26,86,219,.06) 0%, transparent 50%), radial-gradient(circle at 70% 40%, rgba(5,150,105,.05) 0%, transparent 50%); }
+    .svc-hero .container { position: relative; z-index: 2; }
+    .svc-hero-title { font-family: var(--font-display); font-size: clamp(40px, 5.5vw, 68px); font-weight: 800; color: var(--ink); line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 20px; }
+    .svc-hero-sub { font-size: 18px; color: var(--text-2); max-width: 560px; margin: 0 auto 36px; line-height: 1.78; }
+
+    /* ── SERVICE DETAIL BLOCK ── */
+    .svc-detail {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .svc-detail:last-child { border-bottom: none; }
+    .svc-detail-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .svc-detail-inner.flip { direction: rtl; }
+    .svc-detail-inner.flip > * { direction: ltr; }
+
+    .svc-num { font-family: var(--font-mono); font-size: 11px; color: var(--text-4); letter-spacing: 2px; margin-bottom: 12px; }
+    .svc-title { font-family: var(--font-display); font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; color: var(--ink); margin-bottom: 12px; line-height: 1.15; }
+    .svc-lead { font-size: 16.5px; color: var(--text-2); line-height: 1.82; margin-bottom: 28px; }
+
+    /* What's included */
+    .includes-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
+    .includes-list { list-style: none; margin-bottom: 24px; }
+    .includes-list li { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 14.5px; color: var(--text-2); line-height: 1.6; }
+    .includes-list li::before { content: '✓'; color: var(--emerald); font-weight: 700; font-size: 13px; margin-top: 2px; flex-shrink: 0; }
+
+    /* Process steps */
+    .process-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 28px; }
+    .ps-item { display: flex; gap: 14px; padding-bottom: 16px; position: relative; }
+    .ps-item:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 30px; bottom: 0; width: 1px; background: var(--border-md); }
+    .ps-num { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: white; flex-shrink: 0; position: relative; z-index: 1; }
+    .ps-text { padding-top: 4px; }
+    .ps-step-title { font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 3px; }
+    .ps-step-desc { font-size: 13px; color: var(--text-3); line-height: 1.65; }
+
+    /* Tag stack */
+    .svc-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .svc-stack-tag { padding: 6px 14px; border-radius: 8px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; border: 1.5px solid var(--border); color: var(--text-2); background: var(--off-white); }
+
+    /* Metrics */
+    .svc-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 28px; }
+    .svc-metric { background: var(--off-white); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+    .sm-val { font-family: var(--font-display); font-size: 24px; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+    .sm-label { font-family: var(--font-mono); font-size: 9px; color: var(--text-3); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Visual mockup cards */
+    .svc-visual {
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); padding: 28px; position: relative; overflow: hidden;
+    }
+    .svc-visual-header { display: flex; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .sv-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .sv-title { font-family: var(--font-mono); font-size: 10px; color: var(--text-3); letter-spacing: 1px; margin-left: auto; }
+
+    /* Highlight box */
+    .highlight-box { background: var(--blue-pale); border: 1px solid var(--blue-pale2); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 24px; }
+    .highlight-box p { font-size: 14px; color: var(--ink-2); line-height: 1.72; }
+    .highlight-box strong { color: var(--blue); }
+
+    /* FAQ mini */
+    .faq-item { border-bottom: 1px solid var(--border); padding: 16px 0; }
+    .faq-q { font-weight: 600; font-size: 14.5px; color: var(--ink); margin-bottom: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-a { font-size: 13.5px; color: var(--text-2); line-height: 1.72; }
+
+    /* Pricing hint */
+    .price-hint { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: var(--gold-pale); border: 1px solid rgba(217,119,6,.2); border-radius: 10px; margin-top: 20px; }
+    .price-hint-text { font-size: 13.5px; color: var(--ink); }
+    .price-hint-text strong { color: var(--gold); }
+
+    /* ── COMPARISON TABLE ── */
+    .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    .compare-table th { background: var(--ink); color: white; padding: 14px 16px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-align: left; }
+    .compare-table th:first-child { border-radius: 10px 0 0 0; }
+    .compare-table th:last-child { border-radius: 0 10px 0 0; }
+    .compare-table td { padding: 12px 16px; font-size: 13.5px; color: var(--text-2); border-bottom: 1px solid var(--border); }
+    .compare-table tr:hover td { background: var(--blue-pale); }
+    .compare-table .check { color: var(--emerald); font-weight: 700; font-size: 16px; }
+    .compare-table .cross { color: var(--text-4); font-size: 16px; }
+
+    /* ── CTA ── */
+    .svc-cta { background: linear-gradient(135deg, var(--ink) 0%, #1e3a5f 100%); border-radius: var(--radius-xl); padding: 56px; text-align: center; color: white; position: relative; overflow: hidden; }
+    .svc-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(26,86,219,.25) 0%, transparent 55%); }
+    .svc-cta .container { position: relative; z-index: 2; }
+    .svc-cta-title { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; margin-bottom: 12px; }
+    .svc-cta-desc { font-size: 16px; color: rgba(255,255,255,.65); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .btn-white-solid { background: white !important; color: var(--ink) !important; }
+    .btn-white-solid:hover { background: var(--blue-pale) !important; color: var(--blue) !important; }
+
+    @media (max-width: 900px) {
+      .svc-detail-inner { grid-template-columns: 1fr; gap: 40px; }
+      .svc-detail-inner.flip { direction: ltr; }
+      .svc-metrics { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .svc-metrics { grid-template-columns: 1fr 1fr; }
+      .svc-metrics .svc-metric:last-child { grid-column: span 2; }
+      .svc-cta { padding: 36px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">AT</span>
+      <span class="logo-name">Awais Tahir</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active-page">Services</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="index.html#blog">Insights</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="about.html" onclick="closeMobile()">About</a></li>
+    <li><a href="services.html" onclick="closeMobile()">Services</a></li>
+    <li><a href="portfolio.html" onclick="closeMobile()">Portfolio</a></li>
+    <li><a href="index.html#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="svc-hero">
+  <div class="container">
+    <div class="section-label reveal-up" style="justify-content:center">What I Offer</div>
+    <h1 class="svc-hero-title reveal-up" style="animation-delay:.1s">
+      Premium Services That<br/><span class="gradient-text">Drive Real Results</span>
+    </h1>
+    <p class="svc-hero-sub reveal-up" style="animation-delay:.2s">Eight specialised services spanning financial accounting, data analytics, and technology automation — delivered with precision and care.</p>
+    <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap" class="reveal-up" style="animation-delay:.3s">
+      <a href="#bookkeeping" class="btn-outline" style="font-size:13px;padding:10px 20px">📚 Bookkeeping</a>
+      <a href="#reporting" class="btn-outline" style="font-size:13px;padding:10px 20px">📋 Reporting</a>
+      <a href="#analytics" class="btn-outline" style="font-size:13px;padding:10px 20px">🔍 Analytics</a>
+      <a href="#powerbi" class="btn-outline" style="font-size:13px;padding:10px 20px">📈 Power BI</a>
+      <a href="#sql" class="btn-outline" style="font-size:13px;padding:10px 20px">🗄️ SQL</a>
+      <a href="#automation" class="btn-outline" style="font-size:13px;padding:10px 20px">🤖 Automation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE 1 — BOOKKEEPING ═══ -->
+<section class="svc-detail section-white" id="bookkeeping">
+  <div class="container">
+    <div class="svc-detail-inner">
+      <div class="scroll-reveal">
+        <div class="svc-num">01 / 08</div>
+        <h2 class="svc-title">📚 Bookkeeping &<br/>Accounting</h2>
+        <p class="svc-lead">Accurate, timely, and completely organised books are the foundation of every good business decision. I handle the full accounting cycle so you can focus on running your business.</p>
+        <div class="highlight-box">
+          <p><strong>Who this is for:</strong> SMEs, startups, and self-employed professionals who need reliable books without hiring a full-time accountant.</p>
+        </div>
+        <div class="includes-label">What's Included</div>
+        <ul class="includes-list">
+          <li>Full-cycle bookkeeping — recording, categorising, and reconciling all transactions</li>
+          <li>Bank and credit card reconciliation (monthly)</li>
+          <li>Accounts payable and receivable management</li>
+          <li>Payroll processing and journal entries</li>
+          <li>VAT/GST/Sales tax preparation and filing</li>
+          <li>Year-end closing and trial balance</li>
+          <li>QuickBooks or Excel setup and chart of accounts design</li>
+          <li>Monthly bookkeeping health report</li>
+        </ul>
+        <div class="svc-stack-label" style="font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text-3);margin-bottom:10px">Tools Used</div>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">QuickBooks Online</span>
+          <span class="svc-stack-tag">Excel</span>
+          <span class="svc-stack-tag">Xero</span>
+          <span class="svc-stack-tag">Wave</span>
+          <span class="svc-stack-tag">GAAP</span>
+          <span class="svc-stack-tag">IFRS</span>
+        </div>
+        <div class="svc-metrics">
+          <div class="svc-metric"><div class="sm-val" style="color:var(--blue)">99.8%</div><div class="sm-label">Accuracy Rate</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--emerald)">48h</div><div class="sm-label">Avg Turnaround</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--gold)">50+</div><div class="sm-label">Clients Served</div></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#contact" class="btn-primary">Get a Quote</a>
+          <a href="portfolio.html" class="btn-outline">See Examples</a>
+        </div>
+      </div>
+      <div class="scroll-reveal" style="transition-delay:.15s">
+        <div class="svc-visual">
+          <div class="svc-visual-header">
+            <div class="sv-dot" style="background:#f87171"></div>
+            <div class="sv-dot" style="background:#fbbf24"></div>
+            <div class="sv-dot" style="background:#34d399"></div>
+            <span class="sv-title">chart_of_accounts.xlsx</span>
+          </div>
+          <table class="compare-table" style="width:100%">
+            <thead><tr><th>Account</th><th>Type</th><th>Balance</th></tr></thead>
+            <tbody>
+              <tr><td>Cash & Bank</td><td style="color:var(--blue);font-family:var(--font-mono);font-size:11px">ASSET</td><td style="font-weight:700;color:var(--emerald)">$84,200</td></tr>
+              <tr><td>Accounts Receivable</td><td style="color:var(--blue);font-family:var(--font-mono);font-size:11px">ASSET</td><td style="font-weight:700;color:var(--emerald)">$41,500</td></tr>
+              <tr><td>Inventory</td><td style="color:var(--blue);font-family:var(--font-mono);font-size:11px">ASSET</td><td style="font-weight:700;color:var(--emerald)">$28,000</td></tr>
+              <tr><td>Accounts Payable</td><td style="color:var(--rose);font-family:var(--font-mono);font-size:11px">LIABILITY</td><td style="font-weight:700;color:var(--rose)">$18,400</td></tr>
+              <tr><td>Revenue</td><td style="color:var(--emerald);font-family:var(--font-mono);font-size:11px">INCOME</td><td style="font-weight:700;color:var(--emerald)">$482,000</td></tr>
+              <tr><td>Cost of Sales</td><td style="color:var(--gold);font-family:var(--font-mono);font-size:11px">EXPENSE</td><td style="font-weight:700;color:var(--gold)">$268,000</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-top:18px">
+            <div class="includes-label">How It Works</div>
+            <div class="process-steps">
+              <div class="ps-item">
+                <div class="ps-num" style="background:var(--blue)">1</div>
+                <div class="ps-text"><div class="ps-step-title">Connect Your Accounts</div><div class="ps-step-desc">Bank feeds, receipts, and invoices — all synced securely.</div></div>
+              </div>
+              <div class="ps-item">
+                <div class="ps-num" style="background:var(--emerald)">2</div>
+                <div class="ps-text"><div class="ps-step-title">Categorise & Reconcile</div><div class="ps-step-desc">Every transaction coded correctly, every account balanced.</div></div>
+              </div>
+              <div class="ps-item">
+                <div class="ps-num" style="background:var(--gold)">3</div>
+                <div class="ps-text"><div class="ps-step-title">Monthly Report</div><div class="ps-step-desc">Clean P&L, balance sheet, and cash position delivered on time.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE 2 — FINANCIAL REPORTING ═══ -->
+<section class="svc-detail section-alt" id="reporting">
+  <div class="container">
+    <div class="svc-detail-inner flip">
+      <div class="scroll-reveal">
+        <div class="svc-num">02 / 08</div>
+        <h2 class="svc-title">📋 Financial Reporting</h2>
+        <p class="svc-lead">Professional financial statements prepared under IFRS or GAAP — board-ready, audit-ready, and bank-ready. Clear, accurate, and delivered on time.</p>
+        <div class="includes-label">What's Included</div>
+        <ul class="includes-list">
+          <li>Statement of Financial Position (Balance Sheet)</li>
+          <li>Statement of Comprehensive Income (P&L)</li>
+          <li>Statement of Cash Flows (IAS 7 — direct & indirect)</li>
+          <li>Statement of Changes in Equity</li>
+          <li>Disclosure notes (IFRS compliant)</li>
+          <li>Management accounts and board packs</li>
+          <li>Variance analysis and commentary</li>
+          <li>Budget vs actual reports</li>
+          <li>KPI dashboards for leadership</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">IFRS 16</span><span class="svc-stack-tag">IAS 7</span>
+          <span class="svc-stack-tag">IAS 16</span><span class="svc-stack-tag">Excel</span>
+          <span class="svc-stack-tag">Power BI</span><span class="svc-stack-tag">Word</span>
+        </div>
+        <div class="svc-metrics">
+          <div class="svc-metric"><div class="sm-val" style="color:var(--gold)">0</div><div class="sm-label">Audit Findings</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--blue)">£2M</div><div class="sm-label">Facility Secured</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--emerald)">5wk</div><div class="sm-label">Avg Delivery</div></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#contact" class="btn-primary">Request a Report</a>
+          <a href="portfolio.html#project-ifrs" class="btn-outline">View Case Study</a>
+        </div>
+      </div>
+      <div class="scroll-reveal" style="transition-delay:.15s">
+        <div class="svc-visual">
+          <div class="svc-visual-header">
+            <div class="sv-dot" style="background:#f87171"></div>
+            <div class="sv-dot" style="background:#fbbf24"></div>
+            <div class="sv-dot" style="background:#34d399"></div>
+            <span class="sv-title">annual_report_2024.xlsx</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div style="background:var(--ink);color:white;padding:12px 14px;border-radius:8px;font-family:var(--font-mono);font-size:10px;letter-spacing:1px">STATEMENT OF FINANCIAL POSITION · 31 DEC 2024</div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:10px 14px;background:var(--blue-pale);border-radius:8px;border:1px solid var(--blue-pale2)">
+              <span style="font-size:13px;font-weight:600">Total Assets</span>
+              <span style="font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--blue)">£2,551,000</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border)">
+              <span style="font-size:13px;color:var(--text-2)">Property, Plant & Equipment</span>
+              <span style="font-family:var(--font-mono);font-size:13px">£1,240,000</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border)">
+              <span style="font-size:13px;color:var(--text-2)">Right-of-use Assets (IFRS 16)</span>
+              <span style="font-family:var(--font-mono);font-size:13px">£380,000</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px;padding:10px 14px;border-bottom:1px solid var(--border)">
+              <span style="font-size:13px;color:var(--text-2)">Trade Receivables</span>
+              <span style="font-family:var(--font-mono);font-size:13px">£284,000</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:10px 14px;background:var(--emerald-pale);border-radius:8px;border:1px solid rgba(5,150,105,.2)">
+              <span style="font-size:13px;font-weight:600">Total Equity</span>
+              <span style="font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--emerald)">£1,394,000</span>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <div style="flex:1;text-align:center;padding:10px;background:var(--emerald-pale);border-radius:8px;border:1px solid rgba(5,150,105,.2)">
+                <div style="font-family:var(--font-mono);font-size:9px;color:var(--emerald);letter-spacing:1px">IFRS COMPLIANT</div>
+              </div>
+              <div style="flex:1;text-align:center;padding:10px;background:var(--blue-pale);border-radius:8px;border:1px solid var(--blue-pale2)">
+                <div style="font-family:var(--font-mono);font-size:9px;color:var(--blue);letter-spacing:1px">AUDIT READY</div>
+              </div>
+              <div style="flex:1;text-align:center;padding:10px;background:var(--gold-pale);border-radius:8px;border:1px solid rgba(217,119,6,.2)">
+                <div style="font-family:var(--font-mono);font-size:9px;color:var(--gold);letter-spacing:1px">BANK APPROVED</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE 3 — DATA ANALYTICS ═══ -->
+<section class="svc-detail section-white" id="analytics">
+  <div class="container">
+    <div class="svc-detail-inner">
+      <div class="scroll-reveal">
+        <div class="svc-num">03 / 08</div>
+        <h2 class="svc-title">🔍 Data Analytics</h2>
+        <p class="svc-lead">Your data contains the answers to your most important business questions. I extract, clean, analyse, and visualise it so those answers are clear, trustworthy, and actionable.</p>
+        <div class="includes-label">What's Included</div>
+        <ul class="includes-list">
+          <li>Exploratory data analysis (EDA) — understanding what your data contains</li>
+          <li>Data cleaning and transformation pipelines</li>
+          <li>Statistical analysis: trends, seasonality, correlations</li>
+          <li>Customer segmentation (RFM, clustering)</li>
+          <li>Cohort analysis and retention modelling</li>
+          <li>Revenue forecasting and scenario modelling</li>
+          <li>Anomaly detection in financial data</li>
+          <li>Executive-ready written insights report</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">Python</span><span class="svc-stack-tag">Pandas</span>
+          <span class="svc-stack-tag">NumPy</span><span class="svc-stack-tag">Matplotlib</span>
+          <span class="svc-stack-tag">Seaborn</span><span class="svc-stack-tag">Scikit-learn</span>
+          <span class="svc-stack-tag">Jupyter</span>
+        </div>
+        <div class="svc-metrics">
+          <div class="svc-metric"><div class="sm-val" style="color:var(--purple)">1M+</div><div class="sm-label">Rows Processed</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--blue)">34%</div><div class="sm-label">Avg Revenue Lift</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--emerald)">72h</div><div class="sm-label">Avg Delivery</div></div>
+        </div>
+        <a href="index.html#contact" class="btn-primary">Start Analysis</a>
+      </div>
+      <div class="scroll-reveal" style="transition-delay:.15s">
+        <div class="svc-visual">
+          <div class="svc-visual-header">
+            <div class="sv-dot" style="background:#f87171"></div>
+            <div class="sv-dot" style="background:#fbbf24"></div>
+            <div class="sv-dot" style="background:#34d399"></div>
+            <span class="sv-title">analysis.py</span>
+          </div>
+          <div style="background:var(--ink);border-radius:10px;padding:18px;font-family:var(--font-mono);font-size:11.5px;line-height:2;margin-bottom:16px">
+            <div><span style="color:#ff79c6">import</span><span style="color:#f8f8f2"> pandas </span><span style="color:#ff79c6">as</span><span style="color:#f8f8f2"> pd</span></div>
+            <div><span style="color:#ff79c6">import</span><span style="color:#f8f8f2"> numpy </span><span style="color:#ff79c6">as</span><span style="color:#f8f8f2"> np</span></div>
+            <div style="color:#6272a4"># Load & clean data</div>
+            <div><span style="color:#f8f8f2">df = pd.</span><span style="color:#50fa7b">read_csv</span><span style="color:#f8f8f2">(</span><span style="color:#f1fa8c">'sales.csv'</span><span style="color:#f8f8f2">)</span></div>
+            <div><span style="color:#f8f8f2">df[</span><span style="color:#f1fa8c">'revenue'</span><span style="color:#f8f8f2">].</span><span style="color:#50fa7b">fillna</span><span style="color:#f8f8f2">(df.mean())</span></div>
+            <div style="color:#6272a4"># RFM Segmentation</div>
+            <div><span style="color:#f8f8f2">rfm = df.</span><span style="color:#50fa7b">groupby</span><span style="color:#f8f8f2">(</span><span style="color:#f1fa8c">'customer_id'</span><span style="color:#f8f8f2">).</span><span style="color:#50fa7b">agg</span><span style="color:#f8f8f2">({</span></div>
+            <div><span style="color:#f8f8f2">    </span><span style="color:#f1fa8c">'date'</span><span style="color:#f8f8f2">: </span><span style="color:#f1fa8c">'max'</span><span style="color:#f8f8f2">,</span></div>
+            <div><span style="color:#f8f8f2">    </span><span style="color:#f1fa8c">'order_id'</span><span style="color:#f8f8f2">: </span><span style="color:#f1fa8c">'count'</span><span style="color:#f8f8f2">,</span></div>
+            <div><span style="color:#f8f8f2">    </span><span style="color:#f1fa8c">'revenue'</span><span style="color:#f8f8f2">: </span><span style="color:#f1fa8c">'sum'</span></div>
+            <div><span style="color:#f8f8f2">})</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <div style="background:var(--blue-pale);border:1px solid var(--blue-pale2);border-radius:8px;padding:12px;text-align:center">
+              <div style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--blue)">14,397</div>
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);letter-spacing:1px;margin-top:3px">CUSTOMERS SEGMENTED</div>
+            </div>
+            <div style="background:var(--emerald-pale);border:1px solid rgba(5,150,105,.2);border-radius:8px;padding:12px;text-align:center">
+              <div style="font-family:var(--font-display);font-size:20px;font-weight:800;color:var(--emerald)">2.3s</div>
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);letter-spacing:1px;margin-top:3px">QUERY EXECUTION</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE 4 — POWER BI ═══ -->
+<section class="svc-detail section-alt" id="powerbi">
+  <div class="container">
+    <div class="svc-detail-inner flip">
+      <div class="scroll-reveal">
+        <div class="svc-num">04 / 08</div>
+        <h2 class="svc-title">📈 Power BI<br/>Dashboards</h2>
+        <p class="svc-lead">Interactive, real-time Power BI dashboards that replace your weekly report emails and give your leadership team the financial visibility they need — always, instantly.</p>
+        <div class="includes-label">What's Included</div>
+        <ul class="includes-list">
+          <li>Data model design (star schema, relationships)</li>
+          <li>Power Query (M) data transformation</li>
+          <li>Custom DAX measures: time intelligence, YOY, rolling averages</li>
+          <li>Executive summary, P&L, expense, and product performance pages</li>
+          <li>Drill-through and drill-down capability</li>
+          <li>Row-level security (RLS) for role-based access</li>
+          <li>Scheduled refresh and alert setup</li>
+          <li>Training session for your team</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">Power BI Desktop</span><span class="svc-stack-tag">DAX</span>
+          <span class="svc-stack-tag">Power Query (M)</span><span class="svc-stack-tag">SQL Server</span>
+          <span class="svc-stack-tag">QuickBooks API</span><span class="svc-stack-tag">Excel</span>
+        </div>
+        <div class="svc-metrics">
+          <div class="svc-metric"><div class="sm-val" style="color:var(--blue)">10h</div><div class="sm-label">Saved / Week</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--emerald)">2h</div><div class="sm-label">Refresh Rate</div></div>
+          <div class="svc-metric"><div class="sm-val" style="color:var(--gold)">6</div><div class="sm-label">Report Pages</div></div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="index.html#contact" class="btn-primary">Build My Dashboard</a>
+          <a href="portfolio.html#project-dashboard" class="btn-outline">See Case Study</a>
+        </div>
+      </div>
+      <div class="scroll-reveal" style="transition-delay:.15s">
+        <div class="svc-visual">
+          <div class="svc-visual-header">
+            <div class="sv-dot" style="background:#f87171"></div>
+            <div class="sv-dot" style="background:#fbbf24"></div>
+            <div class="sv-dot" style="background:#34d399"></div>
+            <span class="sv-title">financial_dashboard.pbix</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+            <div style="background:var(--blue-pale);border:1px solid var(--blue-pale2);border-radius:8px;padding:14px">
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--blue);letter-spacing:1px;margin-bottom:5px">TOTAL REVENUE</div>
+              <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--ink)">$482K</div>
+              <div style="font-size:11px;color:var(--emerald);margin-top:3px">↑ 28.4% vs last month</div>
+            </div>
+            <div style="background:var(--emerald-pale);border:1px solid rgba(5,150,105,.2);border-radius:8px;padding:14px">
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--emerald);letter-spacing:1px;margin-bottom:5px">NET PROFIT</div>
+              <div style="font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--ink)">$94K</div>
+              <div style="font-size:11px;color:var(--emerald);margin-top:3px">↑ 12.1% vs last month</div>
+            </div>
+          </div>
+          <div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:10px">
+            <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);letter-spacing:1px;margin-bottom:10px">REVENUE TREND</div>
+            <svg viewBox="0 0 280 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="0,58 26,48 52,52 78,38 104,42 130,30 156,34 182,22 208,26 234,16 260,20 280,14 280,70 0,70" fill="#dbeafe" opacity=".8"/>
+              <polyline points="0,58 26,48 52,52 78,38 104,42 130,30 156,34 182,22 208,26 234,16 260,20 280,14" stroke="#1a56db" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);letter-spacing:1px">PAGES</div>
+              <div style="font-weight:800;font-size:18px;color:var(--ink);margin-top:3px">6</div>
+            </div>
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);letter-spacing:1px">DAX MEASURES</div>
+              <div style="font-weight:800;font-size:18px;color:var(--ink);margin-top:3px">40+</div>
+            </div>
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center">
+              <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-3);letter-spacing:1px">REFRESH</div>
+              <div style="font-weight:800;font-size:18px;color:var(--ink);margin-top:3px">2h</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES 5-8 — COMPACT ═══ -->
+<section class="section section-white" id="sql">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">More Services</div>
+      <h2 class="section-title">Additional <span class="gradient-text">Specialisations</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+
+      <!-- SQL -->
+      <div class="card scroll-reveal" style="padding:32px" id="sql-card">
+        <div style="font-size:32px;margin-bottom:14px">🗄️</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">05 / 08</div>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px">SQL Analysis & ETL</h3>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.75;margin-bottom:18px">Deep database querying, complex joins, window functions, and ETL pipelines that extract meaningful patterns from large financial datasets. Turn your raw database into a decision engine.</p>
+        <ul class="includes-list" style="margin-bottom:18px">
+          <li>Complex queries with CTEs and window functions</li>
+          <li>RFM segmentation and customer lifetime value</li>
+          <li>Automated ETL pipelines (Python + SQL)</li>
+          <li>Performance optimisation of slow queries</li>
+          <li>Database schema design for analytics</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">PostgreSQL</span><span class="svc-stack-tag">MySQL</span>
+          <span class="svc-stack-tag">BigQuery</span><span class="svc-stack-tag">dbt</span>
+        </div>
+        <a href="portfolio.html#project-sql" class="btn-ghost-blue" style="margin-top:16px;display:inline-flex">View Case Study →</a>
+      </div>
+
+      <!-- Automation -->
+      <div class="card scroll-reveal" style="padding:32px;transition-delay:.1s" id="automation">
+        <div style="font-size:32px;margin-bottom:14px">🤖</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">06 / 08</div>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px">Python Automation</h3>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.75;margin-bottom:18px">Custom Python scripts that automate repetitive financial tasks — from invoice generation to bank reconciliation — saving hours every week and eliminating human error.</p>
+        <ul class="includes-list" style="margin-bottom:18px">
+          <li>Invoice generation, emailing, and tracking</li>
+          <li>Bank statement reconciliation (fuzzy matching)</li>
+          <li>Automated report generation (PDF/Excel)</li>
+          <li>API integrations with accounting software</li>
+          <li>Scheduled financial data pipelines</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">Python</span><span class="svc-stack-tag">Pandas</span>
+          <span class="svc-stack-tag">ReportLab</span><span class="svc-stack-tag">SMTP</span>
+        </div>
+        <a href="portfolio.html#project-invoice" class="btn-ghost-blue" style="margin-top:16px;display:inline-flex">View Case Study →</a>
+      </div>
+
+      <!-- Business Intelligence -->
+      <div class="card scroll-reveal" style="padding:32px;transition-delay:.2s" id="bi">
+        <div style="font-size:32px;margin-bottom:14px">🧠</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">07 / 08</div>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px">Business Intelligence</h3>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.75;margin-bottom:18px">End-to-end BI strategy — from data warehouse design to executive reporting — so your leadership always has the insight they need to make confident decisions.</p>
+        <ul class="includes-list" style="margin-bottom:18px">
+          <li>Data warehouse architecture and design</li>
+          <li>Tableau dashboards with multi-source data</li>
+          <li>Marketing attribution and ROI tracking</li>
+          <li>Executive KPI reporting suites</li>
+          <li>BI tool selection and vendor evaluation</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">Tableau</span><span class="svc-stack-tag">Looker</span>
+          <span class="svc-stack-tag">Metabase</span><span class="svc-stack-tag">dbt</span>
+        </div>
+        <a href="portfolio.html#project-tableau" class="btn-ghost-blue" style="margin-top:16px;display:inline-flex">View Case Study →</a>
+      </div>
+
+      <!-- Software Development -->
+      <div class="card scroll-reveal" style="padding:32px;transition-delay:.3s" id="software">
+        <div style="font-size:32px;margin-bottom:14px">💡</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-3);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px">08 / 08</div>
+        <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px">Software Development</h3>
+        <p style="font-size:14px;color:var(--text-2);line-height:1.75;margin-bottom:18px">Future-facing fintech software — custom financial tools, SaaS applications, and intelligent platforms built for scale. Where finance expertise meets modern software engineering.</p>
+        <ul class="includes-list" style="margin-bottom:18px">
+          <li>Custom financial calculation engines</li>
+          <li>SaaS MVP development for fintech ideas</li>
+          <li>AI-powered financial analysis tools</li>
+          <li>API development for finance integrations</li>
+          <li>Internal finance tool development</li>
+        </ul>
+        <div class="svc-stack">
+          <span class="svc-stack-tag">Python</span><span class="svc-stack-tag">FastAPI</span>
+          <span class="svc-stack-tag">React</span><span class="svc-stack-tag">PostgreSQL</span>
+        </div>
+        <div class="price-hint" style="margin-top:16px">
+          <span>💬</span><div class="price-hint-text">Custom projects — <strong>let's discuss your idea</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="svc-cta scroll-reveal">
+      <div class="svc-cta-title">Not sure which service you need?</div>
+      <p class="svc-cta-desc">Tell me about your business challenge — I'll recommend the right approach and give you a clear, honest assessment with no obligation.</p>
+      <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap">
+        <a href="index.html#contact" class="btn-primary btn-white-solid">📧 Start a Conversation</a>
+        <a href="portfolio.html" class="btn-outline" style="border-color:rgba(255,255,255,.3);color:white">View Case Studies →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo-wrap"><div class="footer-logo-mark">AT</div><span class="footer-logo-name">Awais Tahir</span></div>
+        <p class="footer-tagline">Finance Professional · Data Analyst · Future Finance-Tech Founder</p>
+        <p class="footer-copy">© 2025 Awais Tahir · iamawaistahir.com · All Rights Reserved</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <div class="fl-title">Services</div>
+          <a href="#bookkeeping">Bookkeeping</a>
+          <a href="#reporting">Financial Reporting</a>
+          <a href="#analytics">Data Analytics</a>
+          <a href="#powerbi">Power BI</a>
+          <a href="#sql">SQL Analysis</a>
+          <a href="#automation">Python Automation</a>
+        </div>
+        <div class="fl-col">
+          <div class="fl-title">Pages</div>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built with precision · iamawaistahir.com</span>
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank">in</a>
+        <a href="https://wa.me/923001234567" target="_blank">wa</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

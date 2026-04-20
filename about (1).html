@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Awais Tahir — Finance Professional & Data Analyst</title>
+  <meta name="description" content="Learn about Awais Tahir — ACCA student, finance professional and data analyst bridging accounting and technology."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── ABOUT PAGE HERO ── */
+    .about-hero {
+      padding: 150px 0 80px;
+      background: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .about-hero-blob { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(90px); }
+    .ah-b1 { width: 500px; height: 500px; background: rgba(26,86,219,.06); top: -100px; right: -80px; }
+    .ah-b2 { width: 300px; height: 300px; background: rgba(5,150,105,.05); bottom: -60px; left: -40px; }
+    .about-hero .container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .ah-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: var(--blue-pale); border: 1px solid var(--blue-pale2); border-radius: 100px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
+    .ah-title { font-family: var(--font-display); font-size: clamp(38px, 5vw, 62px); font-weight: 800; color: var(--ink); line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px; }
+    .ah-lead { font-size: 18px; color: var(--text-2); line-height: 1.8; margin-bottom: 28px; }
+    .ah-lead strong { color: var(--blue); font-weight: 700; }
+    .ah-body { font-size: 16px; color: var(--text-2); line-height: 1.82; margin-bottom: 16px; }
+
+    /* Profile card */
+    .profile-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);
+      overflow: hidden;
+    }
+    .profile-header {
+      background: linear-gradient(135deg, var(--ink) 0%, #1e3a5f 100%);
+      padding: 36px; text-align: center; position: relative;
+    }
+    .profile-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-light), var(--emerald-l));
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display); font-size: 36px; font-weight: 800; color: white;
+      margin: 0 auto 16px; border: 4px solid rgba(255,255,255,.2);
+    }
+    .profile-name { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .profile-role { font-family: var(--font-mono); font-size: 11px; color: rgba(255,255,255,.5); letter-spacing: 2px; }
+    .profile-body { padding: 28px; }
+    .profile-stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+    .profile-stat { text-align: center; background: var(--off-white); border: 1px solid var(--border); border-radius: 10px; padding: 14px 8px; }
+    .ps-num { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--ink); }
+    .ps-label { font-family: var(--font-mono); font-size: 9px; color: var(--text-3); letter-spacing: 1px; text-transform: uppercase; margin-top: 3px; }
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .profile-tag { padding: 6px 14px; border-radius: 100px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; border: 1px solid var(--border); color: var(--text-2); background: var(--off-white); }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 32px; }
+    .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 1.5px; background: var(--border-md); }
+    .tl-item { position: relative; margin-bottom: 36px; }
+    .tl-dot { position: absolute; left: -32px; top: 4px; width: 20px; height: 20px; border-radius: 50%; border: 2.5px solid var(--white); box-shadow: 0 0 0 2px var(--blue); background: var(--blue); }
+    .tl-dot.dot-green { box-shadow: 0 0 0 2px var(--emerald); background: var(--emerald); }
+    .tl-dot.dot-gold { box-shadow: 0 0 0 2px var(--gold); background: var(--gold); }
+    .tl-year { font-family: var(--font-mono); font-size: 11px; color: var(--text-3); letter-spacing: 1px; margin-bottom: 5px; }
+    .tl-title { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+    .tl-org { font-size: 14px; color: var(--blue); font-weight: 600; margin-bottom: 8px; }
+    .tl-desc { font-size: 14.5px; color: var(--text-2); line-height: 1.75; }
+
+    /* ── PILLARS ── */
+    .pillars-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .pillar-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 30px 26px; text-align: center;
+      transition: all .3s ease; box-shadow: var(--shadow-sm);
+    }
+    .pillar-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .pillar-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+    .pillar-title { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+    .pillar-desc { font-size: 14px; color: var(--text-2); line-height: 1.72; }
+    .pillar-badge { display: inline-flex; margin-top: 16px; padding: 5px 14px; border-radius: 100px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px; }
+
+    /* ── VALUES ── */
+    .values-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .value-item {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px 22px; display: flex; gap: 16px; align-items: flex-start;
+      transition: all .25s;
+    }
+    .value-item:hover { border-color: rgba(26,86,219,.2); box-shadow: var(--shadow-md); }
+    .value-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+    .value-title { font-weight: 700; font-size: 15px; color: var(--ink); margin-bottom: 5px; }
+    .value-desc { font-size: 13.5px; color: var(--text-2); line-height: 1.7; }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+    .cert-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 22px; text-align: center; transition: all .25s;
+    }
+    .cert-card:hover { border-color: rgba(26,86,219,.2); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .cert-icon { font-size: 30px; margin-bottom: 10px; }
+    .cert-name { font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 4px; }
+    .cert-body { font-size: 12px; color: var(--text-3); font-family: var(--font-mono); }
+    .cert-status { display: inline-block; margin-top: 8px; padding: 3px 10px; border-radius: 100px; font-family: var(--font-mono); font-size: 9px; letter-spacing: 1px; background: var(--blue-pale); color: var(--blue); border: 1px solid var(--blue-pale2); }
+
+    /* ── ABOUT CTA ── */
+    .about-cta {
+      background: linear-gradient(135deg, var(--blue-pale) 0%, var(--emerald-pale) 100%);
+      border: 1px solid var(--border); border-radius: var(--radius-xl);
+      padding: 56px 48px; display: grid; grid-template-columns: 1fr auto;
+      gap: 32px; align-items: center;
+    }
+    .about-cta-title { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .about-cta-desc { font-size: 16px; color: var(--text-2); }
+
+    @media (max-width: 900px) {
+      .about-hero .container { grid-template-columns: 1fr; gap: 48px; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: repeat(2,1fr); }
+      .values-grid { grid-template-columns: 1fr; }
+      .about-cta { grid-template-columns: 1fr; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .cert-grid { grid-template-columns: 1fr 1fr; }
+      .profile-stat-row { grid-template-columns: 1fr 1fr 1fr; }
+      .about-hero { padding: 130px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-mark">AT</span>
+      <span class="logo-name">Awais Tahir</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active-page">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="index.html#blog">Insights</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="about.html" onclick="closeMobile()">About</a></li>
+    <li><a href="services.html" onclick="closeMobile()">Services</a></li>
+    <li><a href="portfolio.html" onclick="closeMobile()">Portfolio</a></li>
+    <li><a href="index.html#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="about-hero">
+  <div class="about-hero-blob ah-b1"></div>
+  <div class="about-hero-blob ah-b2"></div>
+  <div class="container">
+    <div>
+      <div class="ah-eyebrow reveal-up">About Me</div>
+      <h1 class="ah-title reveal-up" style="animation-delay:.1s">Finance Meets<br/><span class="gradient-text">Technology</span></h1>
+      <p class="ah-lead reveal-up" style="animation-delay:.2s">I'm <strong>Awais Tahir</strong> — a finance professional, ACCA student, and data analyst on a mission to bridge the gap between traditional accounting and modern technology.</p>
+      <p class="ah-body reveal-up" style="animation-delay:.28s">With deep expertise in bookkeeping, financial reporting, and data analytics, I help businesses transform raw numbers into strategic insights. My approach combines rigorous financial discipline with cutting-edge tools like Power BI, SQL, and Python to deliver solutions that drive real growth.</p>
+      <p class="ah-body reveal-up" style="animation-delay:.34s">As a future Finance-Tech founder, I'm building toward a vision where intelligent software makes financial clarity accessible to every business — large or small.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:28px" class="reveal-up" style="animation-delay:.42s">
+        <a href="index.html#contact" class="btn-primary">Work With Me</a>
+        <a href="portfolio.html" class="btn-outline">See My Work</a>
+      </div>
+    </div>
+
+    <!-- Profile card -->
+    <div class="reveal-up" style="animation-delay:.15s">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">AT</div>
+          <div class="profile-name">Awais Tahir</div>
+          <div class="profile-role">Finance Professional · Data Analyst</div>
+        </div>
+        <div class="profile-body">
+          <div class="profile-stat-row">
+            <div class="profile-stat"><div class="ps-num">5+</div><div class="ps-label">Years Exp.</div></div>
+            <div class="profile-stat"><div class="ps-num">200+</div><div class="ps-label">Projects</div></div>
+            <div class="profile-stat"><div class="ps-num">50+</div><div class="ps-label">Clients</div></div>
+          </div>
+          <div class="profile-tags">
+            <span class="profile-tag">ACCA Student</span>
+            <span class="profile-tag">Power BI</span>
+            <span class="profile-tag">Python</span>
+            <span class="profile-tag">SQL</span>
+            <span class="profile-tag">IFRS</span>
+            <span class="profile-tag">QuickBooks</span>
+            <span class="profile-tag">Tableau</span>
+            <span class="profile-tag">DAX</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THREE PILLARS ═══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">What Drives Me</div>
+      <h2 class="section-title">Three <span class="gradient-text">Core Strengths</span></h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card scroll-reveal">
+        <span class="pillar-icon">💼</span>
+        <div class="pillar-title">Finance Expert</div>
+        <p class="pillar-desc">Deep knowledge of GAAP, IFRS, financial statement preparation, budgeting, forecasting, and management accounting — built through years of hands-on client work across multiple industries.</p>
+        <span class="pillar-badge" style="background:var(--blue-pale);color:var(--blue);border-color:var(--blue-pale2)">ACCA · IFRS · Bookkeeping</span>
+      </div>
+      <div class="pillar-card scroll-reveal" style="transition-delay:.1s">
+        <span class="pillar-icon">📊</span>
+        <div class="pillar-title">Data Analyst</div>
+        <p class="pillar-desc">Transforming complex datasets into clear, actionable insights using Python, SQL, Power BI, and Tableau. I make data understandable for executives and operational teams alike.</p>
+        <span class="pillar-badge" style="background:var(--emerald-pale);color:var(--emerald);border-color:rgba(5,150,105,.2)">Power BI · SQL · Python</span>
+      </div>
+      <div class="pillar-card scroll-reveal" style="transition-delay:.2s">
+        <span class="pillar-icon">🚀</span>
+        <div class="pillar-title">Tech Visionary</div>
+        <p class="pillar-desc">Building toward a future where intelligent finance software automates the routine, surfaces the important, and makes financial clarity effortless for any business.</p>
+        <span class="pillar-badge" style="background:var(--purple-pale);color:var(--purple);border-color:rgba(124,58,237,.2)">Automation · SaaS · Fintech</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JOURNEY TIMELINE ═══ -->
+<section class="section section-white">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start">
+      <div class="scroll-reveal">
+        <div class="section-label">My Journey</div>
+        <h2 class="section-title">Experience &<br/><span class="gradient-text">Education</span></h2>
+        <p class="section-desc" style="margin-bottom:40px">A career built at the intersection of rigorous financial discipline and modern data technology.</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2023 — Present</div>
+            <div class="tl-title">Freelance Finance & Data Consultant</div>
+            <div class="tl-org">Independent · Remote</div>
+            <p class="tl-desc">Delivering bookkeeping, financial reporting, Power BI dashboards, and Python automation to SMEs and startups across multiple industries. 50+ clients served.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dot-green"></div>
+            <div class="tl-year">2021 — 2023</div>
+            <div class="tl-title">Financial Analyst</div>
+            <div class="tl-org">Regional Consulting Firm</div>
+            <p class="tl-desc">Prepared IFRS-compliant financial statements, built management reporting packs, and introduced the firm's first Power BI dashboards for client deliverables.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dot-gold"></div>
+            <div class="tl-year">2020 — 2021</div>
+            <div class="tl-title">Junior Accountant</div>
+            <div class="tl-org">Accountancy Practice</div>
+            <p class="tl-desc">Full-cycle bookkeeping, VAT returns, payroll, and year-end accounts for 30+ SME clients using QuickBooks and Excel.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2019 — Present</div>
+            <div class="tl-title">ACCA Qualification</div>
+            <div class="tl-org">Association of Chartered Certified Accountants</div>
+            <p class="tl-desc">Pursuing full ACCA membership. Passed 9 papers including Financial Reporting, Performance Management, and Taxation.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot dot-green"></div>
+            <div class="tl-year">2018 — 2019</div>
+            <div class="tl-title">BSc Accounting & Finance</div>
+            <div class="tl-org">University — First Class Honours</div>
+            <p class="tl-desc">Graduated top of cohort. Dissertation on the application of machine learning to financial forecasting.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="scroll-reveal" style="transition-delay:.15s">
+        <div class="section-label" style="margin-top:8px">My Values</div>
+        <h2 class="section-title" style="font-size:clamp(28px,3.5vw,40px);margin-bottom:32px">What I Stand For</h2>
+        <div class="values-grid">
+          <div class="value-item">
+            <span class="value-icon">🎯</span>
+            <div>
+              <div class="value-title">Precision Above All</div>
+              <p class="value-desc">In finance, accuracy isn't optional. I build systems and reports where every number is verified and defensible.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">💡</span>
+            <div>
+              <div class="value-title">Insight Over Information</div>
+              <p class="value-desc">Data only has value when it changes decisions. I always ask "so what?" before considering a deliverable complete.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">⚡</span>
+            <div>
+              <div class="value-title">Efficiency Through Technology</div>
+              <p class="value-desc">If a task is done more than twice, it should be automated. I use code to eliminate the repetitive so humans can focus on the meaningful.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">🤝</span>
+            <div>
+              <div class="value-title">Partnership, Not Vendor</div>
+              <p class="value-desc">I take time to understand your business deeply. Your financial health matters to me beyond the scope of any single project.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">📚</span>
+            <div>
+              <div class="value-title">Lifelong Learning</div>
+              <p class="value-desc">Finance and technology evolve fast. I invest heavily in staying current — from ACCA papers to Python libraries to new BI tools.</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-icon">🌍</span>
+            <div>
+              <div class="value-title">Global Perspective</div>
+              <p class="value-desc">Having worked with clients across multiple countries and industries, I bring a broad lens to every financial challenge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ═══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">Credentials</div>
+      <h2 class="section-title">Certifications & <span class="gradient-text">Qualifications</span></h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card scroll-reveal">
+        <div class="cert-icon">🎓</div>
+        <div class="cert-name">ACCA</div>
+        <div class="cert-body">Association of Chartered Certified Accountants</div>
+        <div class="cert-status">In Progress · 9/13 Papers</div>
+      </div>
+      <div class="cert-card scroll-reveal" style="transition-delay:.08s">
+        <div class="cert-icon">📊</div>
+        <div class="cert-name">Microsoft Power BI</div>
+        <div class="cert-body">Data Analytics & Visualisation</div>
+        <div class="cert-status">Certified</div>
+      </div>
+      <div class="cert-card scroll-reveal" style="transition-delay:.16s">
+        <div class="cert-icon">🐍</div>
+        <div class="cert-name">Python for Finance</div>
+        <div class="cert-body">Financial Analysis with Python</div>
+        <div class="cert-status">Certified</div>
+      </div>
+      <div class="cert-card scroll-reveal" style="transition-delay:.24s">
+        <div class="cert-icon">💼</div>
+        <div class="cert-name">QuickBooks ProAdvisor</div>
+        <div class="cert-body">Certified ProAdvisor · Advanced</div>
+        <div class="cert-status">Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="section section-white">
+  <div class="container">
+    <div class="about-cta scroll-reveal">
+      <div>
+        <div class="about-cta-title">Ready to work together?</div>
+        <p class="about-cta-desc">Whether you need clean books, insightful dashboards, or smart automation — let's make it happen.</p>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="index.html#contact" class="btn-primary">Start a Conversation</a>
+        <a href="portfolio.html" class="btn-outline">See My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo-wrap"><div class="footer-logo-mark">AT</div><span class="footer-logo-name">Awais Tahir</span></div>
+        <p class="footer-tagline">Finance Professional · Data Analyst · Future Finance-Tech Founder</p>
+        <p class="footer-copy">© 2025 Awais Tahir · iamawaistahir.com · All Rights Reserved</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <div class="fl-title">Pages</div>
+          <a href="about.html">About Me</a>
+          <a href="services.html">Services</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+        <div class="fl-col">
+          <div class="fl-title">Contact</div>
+          <a href="mailto:hello@iamawaistahir.com">Email</a>
+          <a href="https://wa.me/923001234567">WhatsApp</a>
+          <a href="https://linkedin.com">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built with precision · iamawaistahir.com</span>
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank">in</a>
+        <a href="https://wa.me/923001234567" target="_blank">wa</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

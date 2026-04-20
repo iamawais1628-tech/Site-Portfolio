@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awais Tahir | Finance Professional & Data Analyst</title>
+  <meta name="description" content="Awais Tahir – Finance Professional, ACCA Student, Data Analyst & Future Finance-Tech Founder. Helping businesses with bookkeeping, accounting, financial reporting, data analytics, and Python automation." />
+  <meta name="keywords" content="bookkeeping consultant, financial reporting, data analytics expert, Power BI dashboards, finance automation, business insights, ACCA, QuickBooks, SQL, Python" />
+  <meta name="author" content="Awais Tahir" />
+  <meta property="og:title" content="Awais Tahir | Finance Professional & Data Analyst" />
+  <meta property="og:description" content="Turning Financial Data Into Business Growth" />
+  <meta property="og:url" content="https://iamawaistahir.com" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://iamawaistahir.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Jost:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="logo-at">AT</span>
+      <span class="logo-name">Awais Tahir</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="#blog">Insights</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="about.html" onclick="closeMobile()">About</a></li>
+    <li><a href="services.html" onclick="closeMobile()">Services</a></li>
+    <li><a href="portfolio.html" onclick="closeMobile()">Portfolio</a></li>
+    <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+    <li><a href="#blog" onclick="closeMobile()">Insights</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- ✅ FIX 1: Added .container wrapper so the CSS flex row fires correctly -->
+  <div class="container">
+
+    <!-- Left: text content -->
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">Finance · Analytics · Technology</div>
+      <h1 class="hero-title reveal-up" style="animation-delay:.15s">
+        Turning Financial Data<br/>
+        <span class="hero-title-accent">Into Business Growth</span>
+      </h1>
+      <p class="hero-sub reveal-up" style="animation-delay:.3s">
+        Helping businesses achieve financial clarity through accounting expertise,<br class="d-none d-md-block"/>
+        data analytics, and technology-driven solutions.
+      </p>
+      <div class="hero-actions reveal-up" style="animation-delay:.45s">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-ghost">Contact Me</a>
+      </div>
+      <div class="hero-trust reveal-up" style="animation-delay:.6s">
+        <div class="trust-item"><span class="trust-dot"></span>ACCA Student</div>
+        <div class="trust-sep">·</div>
+        <div class="trust-item"><span class="trust-dot emerald"></span>Data Analyst</div>
+        <div class="trust-sep">·</div>
+        <div class="trust-item"><span class="trust-dot gold"></span>Finance Professional</div>
+      </div>
+    </div>
+
+    <!-- Right: illustration + ✅ FIX 2: float cards moved INSIDE .hero-visual so they position relative to it -->
+    <div class="hero-visual">
+
+      <div class="float-card float-card-1 reveal-float">
+        <div class="fc-label">Revenue Growth</div>
+        <div class="fc-value">+34.7%</div>
+        <div class="fc-bar"><div class="fc-fill" style="width:75%"></div></div>
+      </div>
+      <div class="float-card float-card-2 reveal-float" style="animation-delay:.3s">
+        <div class="fc-label">Reports Delivered</div>
+        <div class="fc-value">200+</div>
+        <div class="fc-icon">📊</div>
+      </div>
+      <div class="float-card float-card-3 reveal-float" style="animation-delay:.6s">
+        <div class="fc-label">Data Accuracy</div>
+        <div class="fc-value">99.8%</div>
+        <div class="fc-ring"></div>
+      </div>
+
+      <div class="hero-img-wrap">
+        <div class="hero-img-ring"></div>
+        <div class="hero-img-ring ring-2"></div>
+        <div class="hero-img-placeholder">
+          <svg viewBox="0 0 220 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="110" cy="250" rx="80" ry="20" fill="#0a1628" opacity=".4"/>
+            <rect x="30" y="60" width="160" height="200" rx="80" fill="url(#pg1)"/>
+            <circle cx="110" cy="95" r="40" fill="url(#pg2)"/>
+            <rect x="55" y="145" width="100" height="10" rx="5" fill="#e2e8f0" opacity=".5"/>
+            <rect x="65" y="162" width="80" height="8" rx="4" fill="#e2e8f0" opacity=".3"/>
+            <defs>
+              <linearGradient id="pg1" x1="30" y1="60" x2="190" y2="260" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#1a3a6b"/>
+                <stop offset="1" stop-color="#0d2040"/>
+              </linearGradient>
+              <linearGradient id="pg2" x1="70" y1="55" x2="150" y2="135" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4a9eff"/>
+                <stop offset="1" stop-color="#1a5cd4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="img-label">Awais Tahir</div>
+          <div class="img-sublabel">Finance · Analytics · Tech</div>
+        </div>
+        <!-- Mini chart inside hero visual -->
+        <div class="hero-mini-chart">
+          <svg viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,40 20,30 40,35 60,15 80,20 100,8 120,12" stroke="url(#cg)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="cg" x1="0" y1="0" x2="120" y2="0">
+                <stop stop-color="#50fa7b"/>
+                <stop offset="1" stop-color="#4a9eff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+    </div><!-- end .hero-visual -->
+
+  </div><!-- end .container -->
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual-col scroll-reveal">
+        <div class="about-img-frame">
+          <div class="about-img-inner">
+            <svg viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="about-illustration">
+              <!-- Background shape -->
+              <rect width="320" height="400" rx="24" fill="url(#abg)"/>
+              <!-- Dashboard mock -->
+              <rect x="20" y="20" width="280" height="165" rx="12" fill="#0d1f3c" opacity=".9"/>
+              <rect x="36" y="36" width="90" height="55" rx="8" fill="url(#ac1)"/>
+              <rect x="134" y="36" width="75" height="55" rx="8" fill="url(#ac2)"/>
+              <rect x="217" y="36" width="67" height="55" rx="8" fill="url(#ac3)"/>
+              <!-- Chart area -->
+              <rect x="36" y="102" width="248" height="65" rx="6" fill="#0a1628"/>
+              <polyline points="46,155 72,130 98,140 124,110 150,118 176,95 202,100 228,85 254,90 272,82" stroke="#50fa7b" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <polygon points="46,155 72,130 98,140 124,110 150,118 176,95 202,100 228,85 254,90 272,82 272,165 46,165" fill="url(#chartFill)" opacity=".25"/>
+              <!-- Stats row -->
+              <rect x="20" y="198" width="130" height="85" rx="10" fill="#0d1f3c"/>
+              <rect x="160" y="198" width="140" height="85" rx="10" fill="#0d1f3c"/>
+              <!-- Progress bars -->
+              <rect x="36" y="296" width="248" height="12" rx="6" fill="#0d1f3c"/>
+              <rect x="36" y="296" width="180" height="12" rx="6" fill="url(#pb1)"/>
+              <rect x="36" y="320" width="248" height="12" rx="6" fill="#0d1f3c"/>
+              <rect x="36" y="320" width="220" height="12" rx="6" fill="url(#pb2)"/>
+              <rect x="36" y="344" width="248" height="12" rx="6" fill="#0d1f3c"/>
+              <rect x="36" y="344" width="150" height="12" rx="6" fill="url(#pb3)"/>
+              <!-- Labels -->
+              <text x="36" y="220" font-family="sans-serif" font-size="9" fill="#64748b">TOTAL REVENUE</text>
+              <text x="36" y="236" font-family="sans-serif" font-size="18" font-weight="700" fill="#f1f5f9">$482K</text>
+              <text x="36" y="252" font-family="sans-serif" font-size="8" fill="#50fa7b">↑ 28.4%</text>
+              <text x="176" y="220" font-family="sans-serif" font-size="9" fill="#64748b">NET PROFIT</text>
+              <text x="176" y="236" font-family="sans-serif" font-size="18" font-weight="700" fill="#f1f5f9">$94K</text>
+              <text x="176" y="252" font-family="sans-serif" font-size="8" fill="#fbbf24">↑ 12.1%</text>
+              <text x="36" y="286" font-family="sans-serif" font-size="9" fill="#94a3b8">SKILLS & EXPERTISE</text>
+              <text x="36" y="376" font-family="sans-serif" font-size="8" fill="#64748b">Python  SQL  Power BI  Excel  QuickBooks</text>
+              <defs>
+                <linearGradient id="abg" x1="0" y1="0" x2="320" y2="400">
+                  <stop stop-color="#0f2447"/>
+                  <stop offset="1" stop-color="#0a1628"/>
+                </linearGradient>
+                <linearGradient id="ac1" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#1a5cd4"/>
+                  <stop offset="1" stop-color="#0d3a8a"/>
+                </linearGradient>
+                <linearGradient id="ac2" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#059669"/>
+                  <stop offset="1" stop-color="#065f46"/>
+                </linearGradient>
+                <linearGradient id="ac3" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#7c3aed"/>
+                  <stop offset="1" stop-color="#4c1d95"/>
+                </linearGradient>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#50fa7b"/>
+                  <stop offset="1" stop-color="#50fa7b" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="pb1" x1="0" y1="0" x2="1" y2="0">
+                  <stop stop-color="#1a5cd4"/>
+                  <stop offset="1" stop-color="#50fa7b"/>
+                </linearGradient>
+                <linearGradient id="pb2" x1="0" y1="0" x2="1" y2="0">
+                  <stop stop-color="#7c3aed"/>
+                  <stop offset="1" stop-color="#4a9eff"/>
+                </linearGradient>
+                <linearGradient id="pb3" x1="0" y1="0" x2="1" y2="0">
+                  <stop stop-color="#fbbf24"/>
+                  <stop offset="1" stop-color="#f97316"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="about-badge-1 glass-card">
+            <span class="about-badge-icon">🎓</span>
+            <div>
+              <div class="ab-title">ACCA</div>
+              <div class="ab-sub">Student</div>
+            </div>
+          </div>
+          <div class="about-badge-2 glass-card">
+            <span class="about-badge-icon">📈</span>
+            <div>
+              <div class="ab-title">5+ Years</div>
+              <div class="ab-sub">Finance Exp.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-col scroll-reveal" style="transition-delay:.15s">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Finance Meets<br/><span class="gradient-text">Technology</span></h2>
+        <p class="about-intro">I'm <strong>Awais Tahir</strong> — a finance professional, ACCA student, and data analyst on a mission to bridge the gap between traditional accounting and modern technology.</p>
+        <p class="about-body">With deep expertise in bookkeeping, financial reporting, and data analytics, I help businesses transform raw numbers into strategic insights. My approach combines rigorous financial discipline with cutting-edge tools like Power BI, SQL, and Python to deliver solutions that drive real growth.</p>
+        <p class="about-body">As a future Finance-Tech founder, I'm building toward a vision where intelligent software makes financial clarity accessible to every business — large or small.</p>
+
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon" style="background:linear-gradient(135deg,#1a3a6b,#1a5cd4)">💼</div>
+            <div>
+              <div class="pillar-title">Finance Expert</div>
+              <div class="pillar-sub">ACCA · Accounting · Reporting</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon" style="background:linear-gradient(135deg,#064e3b,#059669)">📊</div>
+            <div>
+              <div class="pillar-title">Data Analyst</div>
+              <div class="pillar-sub">Power BI · SQL · Python</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon" style="background:linear-gradient(135deg,#4c1d95,#7c3aed)">🚀</div>
+            <div>
+              <div class="pillar-title">Tech Visionary</div>
+              <div class="pillar-sub">Automation · SaaS · Fintech</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary">Work With Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════ -->
+<section id="services" class="section section-dark">
+  <div class="services-bg-orb"></div>
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">What I Do</div>
+      <h2 class="section-title">Premium <span class="gradient-text">Services</span></h2>
+      <p class="section-desc">End-to-end financial and analytical services designed to give your business a competitive edge.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card scroll-reveal" style="--accent:#1a5cd4">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📚</div>
+        <h3 class="sc-title">Bookkeeping & Accounting</h3>
+        <p class="sc-desc">Accurate, timely bookkeeping and full-cycle accounting tailored to your business needs using QuickBooks and Excel.</p>
+        <div class="sc-tags"><span>QuickBooks</span><span>Excel</span><span>GAAP</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#059669;transition-delay:.08s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📋</div>
+        <h3 class="sc-title">Financial Reporting</h3>
+        <p class="sc-desc">Professional financial statements, P&L analysis, balance sheets, and management reports that tell the true story of your business.</p>
+        <div class="sc-tags"><span>IFRS</span><span>P&L</span><span>Cash Flow</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#7c3aed;transition-delay:.16s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🔍</div>
+        <h3 class="sc-title">Data Analytics</h3>
+        <p class="sc-desc">Transform raw business data into actionable insights with advanced statistical analysis and visual storytelling.</p>
+        <div class="sc-tags"><span>Python</span><span>SQL</span><span>Pandas</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#f59e0b;transition-delay:.24s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">📈</div>
+        <h3 class="sc-title">Power BI Dashboards</h3>
+        <p class="sc-desc">Interactive, real-time Power BI dashboards that bring your KPIs to life with beautiful visualizations and drill-down capability.</p>
+        <div class="sc-tags"><span>Power BI</span><span>DAX</span><span>KPIs</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#0891b2;transition-delay:.32s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🗄️</div>
+        <h3 class="sc-title">SQL Analysis</h3>
+        <p class="sc-desc">Deep database querying, complex joins, and ETL pipelines to extract meaningful patterns from large financial datasets.</p>
+        <div class="sc-tags"><span>SQL</span><span>ETL</span><span>PostgreSQL</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#10b981;transition-delay:.4s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🤖</div>
+        <h3 class="sc-title">Python Automation</h3>
+        <p class="sc-desc">Custom Python scripts that automate repetitive financial tasks — from report generation to data reconciliation — saving hours every week.</p>
+        <div class="sc-tags"><span>Python</span><span>Automation</span><span>APIs</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#8b5cf6;transition-delay:.48s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">🧠</div>
+        <h3 class="sc-title">Business Intelligence</h3>
+        <p class="sc-desc">End-to-end BI strategy — from data warehouse design to executive reporting — so leadership always has the insight they need.</p>
+        <div class="sc-tags"><span>Tableau</span><span>Strategy</span><span>Insights</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+
+      <div class="service-card scroll-reveal" style="--accent:#f97316;transition-delay:.56s">
+        <div class="sc-glow"></div>
+        <div class="sc-icon">💡</div>
+        <h3 class="sc-title">Software Development</h3>
+        <p class="sc-desc">Future-facing fintech software solutions — custom financial tools, SaaS applications, and intelligent platforms built for scale.</p>
+        <div class="sc-tags"><span>SaaS</span><span>Fintech</span><span>AI-Powered</span></div>
+        <div class="sc-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ SKILLS ═══════════════════════ -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Tools & <span class="gradient-text">Technologies</span></h2>
+      <p class="section-desc">A carefully curated stack of finance and data tools, honed through real-world projects.</p>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skills-circles scroll-reveal">
+        <div class="skill-circle" data-pct="95">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#0d2040" stroke-width="8"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#sk1)" stroke-width="8" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314" class="skill-arc"/>
+            <defs><linearGradient id="sk1"><stop stop-color="#1a5cd4"/><stop offset="1" stop-color="#50fa7b"/></linearGradient></defs>
+          </svg>
+          <div class="sc-inner"><span class="sc-pct">95%</span><span class="sc-name">Excel</span></div>
+        </div>
+
+        <div class="skill-circle" data-pct="90">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#0d2040" stroke-width="8"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#sk2)" stroke-width="8" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314" class="skill-arc"/>
+            <defs><linearGradient id="sk2"><stop stop-color="#7c3aed"/><stop offset="1" stop-color="#4a9eff"/></linearGradient></defs>
+          </svg>
+          <div class="sc-inner"><span class="sc-pct">90%</span><span class="sc-name">QuickBooks</span></div>
+        </div>
+
+        <div class="skill-circle" data-pct="88">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#0d2040" stroke-width="8"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#sk3)" stroke-width="8" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314" class="skill-arc"/>
+            <defs><linearGradient id="sk3"><stop stop-color="#059669"/><stop offset="1" stop-color="#50fa7b"/></linearGradient></defs>
+          </svg>
+          <div class="sc-inner"><span class="sc-pct">88%</span><span class="sc-name">Power BI</span></div>
+        </div>
+
+        <div class="skill-circle" data-pct="85">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#0d2040" stroke-width="8"/>
+            <circle cx="60" cy="60" r="50" fill="none" stroke="url(#sk4)" stroke-width="8" stroke-linecap="round" stroke-dasharray="314" stroke-dashoffset="314" class="skill-arc"/>
+            <defs><linearGradient id="sk4"><stop stop-color="#f59e0b"/><stop offset="1" stop-color="#f97316"/></linearGradient></defs>
+          </svg>
+          <div class="sc-inner"><span class="sc-pct">85%</span><span class="sc-name">SQL</span></div>
+        </div>
+      </div>
+
+      <div class="skills-bars scroll-reveal" style="transition-delay:.2s">
+        <div class="skill-bar-item">
+          <div class="sb-header"><span>Python</span><span>82%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-w="82" style="background:linear-gradient(90deg,#7c3aed,#4a9eff)"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-header"><span>Financial Analysis</span><span>95%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-w="95" style="background:linear-gradient(90deg,#1a5cd4,#50fa7b)"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-header"><span>Tableau</span><span>78%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-w="78" style="background:linear-gradient(90deg,#059669,#50fa7b)"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-header"><span>ACCA / IFRS</span><span>90%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-w="90" style="background:linear-gradient(90deg,#f59e0b,#f97316)"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-header"><span>Data Visualization</span><span>88%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-w="88" style="background:linear-gradient(90deg,#8b5cf6,#7c3aed)"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="sb-header"><span>Business Intelligence</span><span>83%</span></div>
+          <div class="sb-track"><div class="sb-fill" data-w="83" style="background:linear-gradient(90deg,#0891b2,#4a9eff)"></div></div>
+        </div>
+
+        <div class="tech-badges">
+          <div class="tech-badge">🐍 Python</div>
+          <div class="tech-badge">📊 Power BI</div>
+          <div class="tech-badge">🗄️ SQL</div>
+          <div class="tech-badge">📈 Tableau</div>
+          <div class="tech-badge">📗 Excel</div>
+          <div class="tech-badge">💼 QuickBooks</div>
+          <div class="tech-badge">🔢 DAX</div>
+          <div class="tech-badge">🧮 IFRS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PORTFOLIO ═══════════════════════ -->
+<section id="portfolio" class="section section-dark">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      <p class="section-desc">Real solutions built for real businesses — from dashboards to automation.</p>
+    </div>
+
+    <div class="portfolio-grid">
+      <a href="portfolio.html#project-dashboard" class="port-card port-card-wide scroll-reveal" style="text-decoration:none;display:block;cursor:pointer">
+        <div class="port-img" style="background:linear-gradient(135deg,#0f2447 0%,#1a5cd4 60%,#50fa7b 100%)">
+          <div class="port-chart-mock">
+            <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="10" width="380" height="180" rx="10" fill="#0a1628" opacity=".7"/>
+              <polyline points="30,150 80,100 130,120 180,60 230,80 280,40 330,50 380,30" stroke="#50fa7b" stroke-width="2.5" fill="none"/>
+              <polygon points="30,150 80,100 130,120 180,60 230,80 280,40 330,50 380,30 380,180 30,180" fill="url(#pfill)" opacity=".2"/>
+              <rect x="30" y="30" width="55" height="35" rx="5" fill="#1a5cd4" opacity=".8"/>
+              <rect x="95" y="30" width="55" height="35" rx="5" fill="#059669" opacity=".8"/>
+              <rect x="160" y="30" width="55" height="35" rx="5" fill="#7c3aed" opacity=".8"/>
+              <defs>
+                <linearGradient id="pfill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#50fa7b"/><stop offset="1" stop-color="#50fa7b" stop-opacity="0"/></linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat">Power BI · Finance</div>
+          <h3 class="port-title">Executive Financial Dashboard</h3>
+          <p class="port-desc">A comprehensive real-time dashboard tracking revenue, expenses, and profitability KPIs for a mid-size retail company.</p>
+          <div class="port-tags"><span>Power BI</span><span>DAX</span><span>SQL</span></div>
+          <div style="margin-top:14px;font-family:var(--font-ui);font-size:13px;font-weight:600;color:var(--blue-light)">View Case Study →</div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#project-invoice" class="port-card scroll-reveal" style="text-decoration:none;display:block;cursor:pointer;transition-delay:.1s">
+        <div class="port-img" style="background:linear-gradient(135deg,#064e3b 0%,#059669 100%)">
+          <div class="port-icon-large">🤖</div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat">Python · Automation</div>
+          <h3 class="port-title">Invoice Automation System</h3>
+          <p class="port-desc">Python bot that auto-generates, sends, and reconciles 500+ monthly invoices, saving 20+ hours per month.</p>
+          <div class="port-tags"><span>Python</span><span>Pandas</span><span>PDF</span></div>
+          <div style="margin-top:14px;font-family:var(--font-ui);font-size:13px;font-weight:600;color:#50fa7b">View Case Study →</div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#project-sql" class="port-card scroll-reveal" style="text-decoration:none;display:block;cursor:pointer;transition-delay:.2s">
+        <div class="port-img" style="background:linear-gradient(135deg,#4c1d95 0%,#7c3aed 100%)">
+          <div class="port-icon-large">📊</div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat">SQL · Analytics</div>
+          <h3 class="port-title">Sales Insights Engine</h3>
+          <p class="port-desc">Complex SQL queries and ETL pipeline extracting customer lifetime value and segment trends from 1M+ rows.</p>
+          <div class="port-tags"><span>SQL</span><span>PostgreSQL</span><span>ETL</span></div>
+          <div style="margin-top:14px;font-family:var(--font-ui);font-size:13px;font-weight:600;color:#8b5cf6">View Case Study →</div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#project-ifrs" class="port-card scroll-reveal" style="text-decoration:none;display:block;cursor:pointer;transition-delay:.3s">
+        <div class="port-img" style="background:linear-gradient(135deg,#78350f 0%,#f59e0b 100%)">
+          <div class="port-icon-large">📋</div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat">Reporting · IFRS</div>
+          <h3 class="port-title">Annual Financial Reports</h3>
+          <p class="port-desc">Full-cycle annual report preparation including IFRS-compliant statements, notes, and management commentary.</p>
+          <div class="port-tags"><span>IFRS</span><span>Excel</span><span>Audit-Ready</span></div>
+          <div style="margin-top:14px;font-family:var(--font-ui);font-size:13px;font-weight:600;color:#f59e0b">View Case Study →</div>
+        </div>
+      </a>
+
+      <a href="portfolio.html#project-tableau" class="port-card scroll-reveal" style="text-decoration:none;display:block;cursor:pointer;transition-delay:.4s">
+        <div class="port-img" style="background:linear-gradient(135deg,#0c4a6e 0%,#0891b2 100%)">
+          <div class="port-icon-large">🎯</div>
+        </div>
+        <div class="port-info">
+          <div class="port-cat">Tableau · BI</div>
+          <h3 class="port-title">Marketing ROI Tracker</h3>
+          <p class="port-desc">Interactive Tableau dashboard correlating marketing spend with revenue outcomes across 12 channels.</p>
+          <div class="port-tags"><span>Tableau</span><span>ROI</span><span>Analytics</span></div>
+          <div style="margin-top:14px;font-family:var(--font-ui);font-size:13px;font-weight:600;color:#0891b2">View Case Study →</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- View All button -->
+    <div style="text-align:center;margin-top:52px;" class="scroll-reveal">
+      <a href="portfolio.html" class="btn-primary" style="font-size:16px;padding:16px 40px">
+        View All Case Studies &nbsp;→
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STATS ═══════════════════════ -->
+<section id="stats" class="section stats-section">
+  <div class="stats-bg"></div>
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item scroll-reveal">
+        <div class="stat-num" data-target="200">0</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item scroll-reveal" style="transition-delay:.1s">
+        <div class="stat-num" data-target="150">0</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">Reports Built</div>
+      </div>
+      <div class="stat-item scroll-reveal" style="transition-delay:.2s">
+        <div class="stat-num" data-target="50">0</div>
+        <div class="stat-plus">+</div>
+        <div class="stat-label">Clients Supported</div>
+      </div>
+      <div class="stat-item scroll-reveal" style="transition-delay:.3s">
+        <div class="stat-num" data-target="1">0</div>
+        <div class="stat-plus">M+</div>
+        <div class="stat-label">Data Insights Delivered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<section id="testimonials" class="section section-dark">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">Testimonials</div>
+      <h2 class="section-title">What Clients <span class="gradient-text">Say</span></h2>
+    </div>
+
+    <div class="testimonials-wrap scroll-reveal">
+      <div class="testi-slider" id="testiSlider">
+        <div class="testi-card active">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Awais completely transformed how we understand our finances. His Power BI dashboards gave us real-time visibility we never had before. Our decision-making is now data-driven and much faster."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#1a5cd4,#50fa7b)">SR</div>
+            <div>
+              <div class="testi-name">Sarah Reynolds</div>
+              <div class="testi-role">CFO, TechVenture Ltd.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"The Python automation scripts Awais built for our invoicing process saved us roughly 25 hours per month. That's time we now invest in growing the business. Incredible ROI."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#059669,#4a9eff)">MK</div>
+            <div>
+              <div class="testi-name">Michael Kahn</div>
+              <div class="testi-role">CEO, Kahn Retail Group</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Finally, an accountant who speaks the language of both finance and tech. Awais prepared our IFRS financial statements flawlessly and built a stunning management reporting suite."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,#7c3aed,#f59e0b)">AP</div>
+            <div>
+              <div class="testi-name">Amira Patel</div>
+              <div class="testi-role">Director, Patel & Associates</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-nav">
+        <button class="testi-dot active" onclick="goTesti(0)"></button>
+        <button class="testi-dot" onclick="goTesti(1)"></button>
+        <button class="testi-dot" onclick="goTesti(2)"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ BLOG ═══════════════════════ -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <div class="section-label">Insights</div>
+      <h2 class="section-title">Finance & Data <span class="gradient-text">Articles</span></h2>
+      <p class="section-desc">Thoughts on finance, analytics, and technology — straight from the desk.</p>
+    </div>
+
+    <div class="blog-grid">
+      <div class="blog-card scroll-reveal">
+        <div class="blog-img" style="background:linear-gradient(135deg,#1a3a6b,#1a5cd4)">
+          <div class="blog-cat-badge">Financial Reporting</div>
+          <div class="blog-img-icon">📋</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>April 2025</span><span>·</span><span>5 min read</span></div>
+          <h3 class="blog-title">5 Financial Reports Every Business Owner Must Understand</h3>
+          <p class="blog-excerpt">Beyond the P&L — the cash flow statement, balance sheet, and management accounts that truly reveal business health.</p>
+          <a href="#" class="blog-link">Read Article →</a>
+        </div>
+      </div>
+
+      <div class="blog-card scroll-reveal" style="transition-delay:.12s">
+        <div class="blog-img" style="background:linear-gradient(135deg,#064e3b,#059669)">
+          <div class="blog-cat-badge">Data Analytics</div>
+          <div class="blog-img-icon">📊</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>March 2025</span><span>·</span><span>7 min read</span></div>
+          <h3 class="blog-title">How Power BI Can Replace Your Weekly Finance Meetings</h3>
+          <p class="blog-excerpt">Real-time dashboards that answer the questions your leadership team asks before they even think to ask them.</p>
+          <a href="#" class="blog-link">Read Article →</a>
+        </div>
+      </div>
+
+      <div class="blog-card scroll-reveal" style="transition-delay:.24s">
+        <div class="blog-img" style="background:linear-gradient(135deg,#4c1d95,#7c3aed)">
+          <div class="blog-cat-badge">Python · Automation</div>
+          <div class="blog-img-icon">🤖</div>
+        </div>
+        <div class="blog-body">
+          <div class="blog-meta"><span>February 2025</span><span>·</span><span>6 min read</span></div>
+          <h3 class="blog-title">Automate Your Accounting with Python: A Practical Guide</h3>
+          <p class="blog-excerpt">From invoice generation to bank reconciliation — the 10 accounting tasks you should automate today.</p>
+          <a href="#" class="blog-link">Read Article →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════ -->
+<section id="contact" class="section section-dark">
+  <div class="contact-orb"></div>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info scroll-reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's Build Something<br/><span class="gradient-text">Remarkable</span></h2>
+        <p class="contact-desc">Ready to transform your financial operations? Let's discuss how I can help your business achieve clarity, efficiency, and growth.</p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="ci-icon">📧</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <a href="mailto:hello@iamawaistahir.com" class="ci-value">hello@iamawaistahir.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🌐</div>
+            <div>
+              <div class="ci-label">Website</div>
+              <a href="https://iamawaistahir.com" class="ci-value">iamawaistahir.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Location</div>
+              <span class="ci-value">Available Worldwide · Remote</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-row">
+          <a href="https://linkedin.com" target="_blank" class="social-btn linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://wa.me/923001234567" target="_blank" class="social-btn whatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap scroll-reveal" style="transition-delay:.2s">
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="john@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Bookkeeping & Accounting</option>
+              <option>Financial Reporting</option>
+              <option>Data Analytics</option>
+              <option>Power BI Dashboard</option>
+              <option>Python Automation</option>
+              <option>Business Intelligence</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Message</label>
+            <textarea rows="5" placeholder="Tell me about your project or business challenge..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <span>Send Message</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <div class="form-success" id="formSuccess">✅ Message sent! I'll respond within 24 hours.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo" style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <span class="logo-at">AT</span>
+          <span class="logo-name">Awais Tahir</span>
+        </div>
+        <p class="footer-tagline">Finance Professional · Data Analyst · Future Finance-Tech Founder</p>
+        <p class="footer-copy">© 2025 Awais Tahir · iamawaistahir.com · All Rights Reserved</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <div class="fl-title">Services</div>
+          <a href="services.html#bookkeeping">Bookkeeping</a>
+          <a href="services.html#reporting">Financial Reporting</a>
+          <a href="services.html#analytics">Data Analytics</a>
+          <a href="services.html#powerbi">Power BI</a>
+          <a href="services.html#automation">Python Automation</a>
+        </div>
+        <div class="fl-col">
+          <div class="fl-title">Quick Links</div>
+          <a href="about.html">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="#blog">Insights</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Built with precision · iamawaistahir.com</span>
+      <div class="footer-socials">
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">in</a>
+        <a href="https://wa.me/923001234567" target="_blank" aria-label="WhatsApp">wa</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
